@@ -1,0 +1,6 @@
+<%= form_for @destination do |form| %>
+   <%= form.hidden_field :lock_version %>
+   <%# ... other inputs %>
+<% end %>
+
+a public/409.html or render :edit, :status => :conflict may be needed
