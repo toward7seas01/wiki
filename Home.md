@@ -1,1 +1,2 @@
 [[ruby tip]]
+[[rails tip]]
