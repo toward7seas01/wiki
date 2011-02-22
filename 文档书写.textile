@@ -5,9 +5,8 @@
 5 find :select或者:order等选项时，基本要加表名，如:order => "users.comments_size desc"
 6 避免使用意义不明的名字，如'before1', 'after3'
 7 类内常量大写，如：
-<ruby>
+
     class Hims
        VERSION = "0.1.0"
     end
     注意Hims这个类名，因为有自己的文件所以不大写
-</ruby>
