@@ -2,3 +2,4 @@
 2 引入version
 3 加入history.txt
 4 使用方法在方法或类的头上书写，程序注释在本体内部书写
+5 find :select或者:order等选项时，基本要加表名，如:order => "users.comments_size desc"
