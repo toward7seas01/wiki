@@ -1,3 +1,5 @@
 <ruby>
-  puts "hello world"
+  def cool
+    puts "hello world"
+  end
 </ruby>
