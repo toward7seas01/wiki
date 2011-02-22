@@ -8,4 +8,4 @@
     class Hims
        VERSION = "0.1.0"
     end
-    注意Hims这个类名，因为有自己的文件所以不大写
+    注意Hims这个类名，因为有自己的文件(hims.rb)所以不大写
