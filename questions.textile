@@ -1,3 +1,5 @@
 2011.02.22
 
 1 assert_sql 是什么？见activerecord/test/cases/custom_locking_test.rb
+
+2 mysql2和mysql两个gem包的区别
