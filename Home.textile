@@ -1,6 +1,7 @@
 [[ruby tip]]
 [[rails tip]]
 [[文档书写]]
+[[代码书写]]
 [[开发规则]]
 [[questions]]
 [[tasks]]
