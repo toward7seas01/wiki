@@ -1,6 +1,5 @@
 1 和项目管理工具结合，如某次提交：fix bug 11069
-2 引入version
-3 加入history.txt
-4 使用方法在方法或类的头上书写，程序注释在本体内部书写
-5 每到发布一个新version的时候，提交只能包括两项，1 更改lib下项目名目录下的version.rb，修改版本号；2 更新history.txt
+2 使用方法在方法或类的头上书写，程序注释在本体内部书写
+3 引入Version常量和history.txt，每到发布一个新version的时候，提交只能包括两项，1 更改lib下项目名目录下的version.rb，修改版本号；2 更新history.txt，记录本次发布的重大更新。发布的提交注释为 release version xxx
+
 
