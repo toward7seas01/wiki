@@ -9,6 +9,7 @@
   3 返回值或者调用后的结果
   4 特殊说明
   如：
+  <pre>
     # Create the new field with a name and optional additional options. Valid
     # options are :default
     #
@@ -29,5 +30,6 @@
       @options = options
       check_default!
     end
+   </pre>
 
 
