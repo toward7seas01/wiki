@@ -2,5 +2,34 @@
 2 使用方法在方法或类的头上书写，程序注释在本体内部书写
 3 引入Version常量和history.txt，每到发布一个新version的时候，提交只能包括两项，1 更改lib下项目名目录下的version.rb，修改版本号；2 更新history.txt，记录本次发布的重大更新。发布的提交注释为 release version xxx
 4 有需要团队其他成员了解的内容务必放到wiki，比如，新开发的功能模块的懒人必读，某些工具（gem）的特殊使用说明等等
+5 方法超过8行，考虑写注释
+  注释的基本规则为：
+  1 简单的说明
+  2 如何调用此方法
+  3 返回值或者调用后的结果
+  4 特殊说明
+  如：
+  <pre>
+    # Create the new field with a name and optional additional options. Valid
+    # options are :default
+    #
+    # Options:
+    #
+    # name: The name of the field as a +Symbol+.
+    # options: A +Hash+ of options for the field.
+    #
+    # Example:
+    #
+    # <tt>Field.new(:score, :default => 0)</tt>
+    def initialize(name, options = {})
+      check_name!(name)
+      @type = options[:type] || Object
+      @name, @default = name, options[:default]
+      @copyable = (@default.is_a?(Array) || @default.is_a?(Hash))
+      @label = options[:label]
+      @options = options
+      check_default!
+    end
+  </pre>
 
 
