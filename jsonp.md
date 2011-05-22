@@ -1,0 +1,50 @@
+helper_link: http://www.ibm.com/developerworks/library/wa-aj-jsonp1/
+
+jsonp secure problem
+
+From the consumer's perspective:
+
+    * You must trust the provider to not return malicious JavaScript instead of the expected JSON wrapped in the JSONP callback you specify.
+    * The same is also true of any third party JavaScript embedded add-ons, such as Google Analytics.
+    * It's only similar to XSS attacks in that it allows a 3rd party to execute arbitrary JavaScript in your application, however, you must first choose to trust that 3rd party by making the request in the first place.
+
+From the provider's perspective:
+
+    * You must not assume that even though the clients' cookie(s) are present in the request that the consumer is a webpage under your control. Check the Referer header against a whitelist of authorized URLs, and/or don't rely on cookie-based authentication.
+    * Analogous to a CSRF / confused deputy attack.
+
+helper link http://en.wikipedia.org/wiki/Cross-site_request_forgery
+
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script type="text/javascript" src="/javascripts/jquery.min.js"></script>
+  </head>
+  <body>
+    <script type="text/javascript">
+      var ok = function(json){
+        $("div").html(json["ResultSet"]["totalResultsAvailable"])
+      }
+
+
+      $(function(){
+        $.ajax({
+          url: "http://local.yahooapis.com/LocalSearchService/V3/localSearch?appid=YahooDemo&query=pizza&zip=10504&results=2&output=json",
+          dataType: 'jsonp',
+          jsonp: 'callback',
+          //jsonpCallback: 'ok',
+          success: function(json){
+            ok(json)
+          }
+        });
+      })
+    </script>
+
+    <div>
+
+    </div>
+  </body>
+</html>
