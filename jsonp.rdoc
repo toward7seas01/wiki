@@ -50,3 +50,6 @@ helper link http://en.wikipedia.org/wiki/Cross-site_request_forgery
     </body>
   </html>
 </demo>
+
+response
+  *http://api.flickr.com/services/feeds/photos_public.gne?tags=cat&tagmode=any&format=json
